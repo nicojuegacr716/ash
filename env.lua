@@ -261,5 +261,3 @@ end)
 
 getgenv()["lz4_decompress"] = lz4decompress
 getgenv()["Lz4Decompress"] = lz4decompress
-
-getgenv()["getrenv"] = newcclosure(function() return RobloxEnvironment end)
