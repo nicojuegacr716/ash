@@ -1,3 +1,9 @@
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local UserInputService = game:GetService("UserInputService")
+local InsertService = game:GetService("InsertService")
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+
 local RobloxEnvironment = table.freeze({
 	["print"] = print, ["warn"] = warn, ["error"] = error, ["assert"] = assert, ["collectgarbage"] = collectgarbage, ["require"] = require,
 	["select"] = select, ["tonumber"] = tonumber, ["tostring"] = tostring, ["type"] = type, ["xpcall"] = xpcall,
@@ -58,13 +64,6 @@ local RobloxEnvironment = table.freeze({
 
 	["getmetatable"] = getmetatable, ["setmetatable"] = setmetatable
 })
-
-getgenv()["getobjects"] = newcclosure(function(Asset)
-    return { InsertService:LoadLocalAsset(Asset) }
-end)
-
-getgenv()["get_objects"] = getobjects
-getgenv()["GetObjects"] = getobjects
 
 -- Returns the script responsible for the currently running function.
 getgenv()["getcallingscript"] = (function() return getgenv(0)["script"] end)
