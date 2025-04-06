@@ -42,7 +42,7 @@ Metatable.__namecall = function(Self, ...)
         return nil
     end
 
-    if Method == "HttpGet" or Method == "HttpGetAsync" then
+    if Method == "HttpGet" or Method == "HttpGetAsync" or Method == "httpget" or Method == "http_get" or Method == "httpgetAsync" or Method == "httpGetAsync" or Method == "HttpgetAsync" then
             return HttpGet(...)
     elseif Method == "GetObjects" then 
             return GetObjects(...)
@@ -61,7 +61,7 @@ Metatable.__index = function(Self, i)
     end
 
     if Self == game then
-        if i == "HttpGet" or i == "HttpGetAsync" then 
+        if i == "HttpGet" or i == "HttpGetAsync" or i == "httpget" or i == "httpgetasync" or i == "HttpGetAsync" or i == "httpGetAsync" or i == "HttpgetAsync" then 
             return HttpGet
         elseif i == "GetObjects" then 
             return GetObjects
